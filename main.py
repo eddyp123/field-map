@@ -1,4 +1,4 @@
-from flask import Flask, request, redirect, render_template, session, flash
+from flask import Flask, request, redirect, url_for, render_template, session, flash
 from flask_sqlalchemy import SQLAlchemy
 
 
@@ -30,7 +30,7 @@ posts = [
 @app.route('/')
 @app.route('/map')
 def index():
-    return "Looks like this baby is up n running"
+    return render_template('map.html')
 
 @app.route('/home')
 def home():
